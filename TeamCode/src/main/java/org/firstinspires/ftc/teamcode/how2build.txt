@@ -1,0 +1,10 @@
+https://ftc-docs.firstinspires.org/en/latest/programming_resources/tutorial_specific/android_studio/creating_op_modes/Creating-and-Running-an-Op-Mode-%28Android-Studio%29.html#building-and-installing-your-opmode
+
+connect the compuiter to the Control Hub via usb Type C
+
+at the top center of Android Studio, where it would usually say No Devices
+click on the dropdown. It's to the left where it says TeamCode.
+
+Make sure REV Robotics Control Hub is selected as the device
+
+Press the green play button to build.

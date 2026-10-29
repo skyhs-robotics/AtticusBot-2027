@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.AtticusBotShared.Components;
 import org.firstinspires.ftc.teamcode.AtticusBotShared.DrivetrainController;
+import org.firstinspires.ftc.teamcode.AtticusBotShared.LimelightController;
 import org.firstinspires.ftc.teamcode.AtticusBotShared.PhysicalGamepad;
 
 
@@ -14,6 +15,7 @@ public class AtticusBotTeleOp extends LinearOpMode {
     final private Components components = Components.getInstance(this);
     final private PhysicalGamepad physicalGamepad = PhysicalGamepad.getInstance(this);
     final private DrivetrainController drivetrainController = DrivetrainController.getInstance(this);
+    final private LimelightController limelightController = LimelightController.getInstance(this);
 
     @Override
     public void runOpMode()
@@ -24,6 +26,8 @@ public class AtticusBotTeleOp extends LinearOpMode {
 
         while (opModeIsActive()) {
             drivetrainController.drive(physicalGamepad.getMoveDirection());
+
+            limelightController.onFrame();
 
             telemetry.update();
             sleep(10);

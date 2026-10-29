@@ -20,7 +20,7 @@ public class Components {
     // COMPONENTS //
 
     // limelight
-//    public Limelight3A limelight = null;
+    public Limelight3A limelight = null;
 
     // drivetrain components
     public DcMotor leftFrontDrive = null;
@@ -37,7 +37,7 @@ public class Components {
         leftBackDrive = op.hardwareMap.get(DcMotor.class, "backLeft");
         rightBackDrive = op.hardwareMap.get(DcMotor.class, "backRight");
 
-//        limelight = op.hardwareMap.get(Limelight3A.class, "limelight");
+        limelight = op.hardwareMap.get(Limelight3A.class, "limelight");
 
         // configurations
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
@@ -45,13 +45,15 @@ public class Components {
         rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
+        limelight.setPollRateHz(11);
+
         op.telemetry.addData("Components", "initialized");
     }
 
     /// De-init components when bot is turned off
     public void deInitComponents()
     {
-//        limelight.stop();
+        limelight.stop();
     }
 
 
