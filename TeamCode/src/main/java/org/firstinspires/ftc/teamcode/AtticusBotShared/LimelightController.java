@@ -3,6 +3,12 @@ package org.firstinspires.ftc.teamcode.AtticusBotShared;
 import com.qualcomm.hardware.limelightvision.LLResult;
 import com.qualcomm.hardware.limelightvision.Limelight3A;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.HardwareDevice;
+import com.qualcomm.robotcore.hardware.IMU;
+
+import org.firstinspires.ftc.robotcore.external.navigation.YawPitchRollAngles;
+
+import java.util.concurrent.CompletableFuture;
 
 public class LimelightController {
     // singleton variables
@@ -10,13 +16,15 @@ public class LimelightController {
     private LimelightController(LinearOpMode providedOp) {
         op = providedOp;
         components = Components.getInstance(op);
+        drivetrainController = DrivetrainController.getInstance(op);
         limelight = components.limelight;
     }
     final private LinearOpMode op;
     final private Components components;
+    final private DrivetrainController drivetrainController;
     final private Limelight3A limelight;
 
-    /// Retrieve the last LLResult of the robot, throws an error if could not retrieve the result
+    /// Retrieve the last LLResult of the robot, throws an error if you could not retrieve the result
     public LLResult retrieveResult()
     {
         LLResult result = limelight.getLatestResult();
@@ -29,11 +37,22 @@ public class LimelightController {
     }
 
 
+
     /// Function called every "frame" of the robot loop
     public void onFrame()
     {
-
         // not done anything with yet
+    }
+
+    /// Yields, and returns false if you could not find an AprilTag, or it just fails
+    public CompletableFuture<Boolean> rotateTowardsAprilTag()
+    {
+        return CompletableFuture.supplyAsync(() -> {
+            LLResult result = retrieveResult();
+            // how to detect if robot did not see the apriltag?
+
+            return true;
+        });
     }
 
 

@@ -1,7 +1,9 @@
-package org.firstinspires.ftc.teamcode.AtticusBotShared;
+package org.firstinspires.ftc.teamcode.AtticusBotTeleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.Gamepad;
+
+import org.firstinspires.ftc.teamcode.AtticusBotShared.DrivetrainController;
 
 /// interface for the physical controller used for teleop
 
