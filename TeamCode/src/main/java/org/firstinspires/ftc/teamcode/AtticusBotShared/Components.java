@@ -45,7 +45,7 @@ public class Components {
         rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
 
-        limelight.setPollRateHz(11);
+        limelight.setPollRateHz(30);
 
         op.telemetry.addData("Components", "initialized");
     }

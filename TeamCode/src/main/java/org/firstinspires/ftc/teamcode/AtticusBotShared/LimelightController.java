@@ -27,13 +27,7 @@ public class LimelightController {
     /// Retrieve the last LLResult of the robot, throws an error if you could not retrieve the result
     public LLResult retrieveResult()
     {
-        LLResult result = limelight.getLatestResult();
-
-        if (result == null || !result.isValid()) {
-            throw new java.lang.Error("Failed to retrieve result");
-        }
-
-        return result;
+        return limelight.getLatestResult();
     }
 
 
@@ -44,12 +38,12 @@ public class LimelightController {
         // not done anything with yet
     }
 
-    /// Yields, and returns false if you could not find an AprilTag, or it just fails
+    /// Returns false if you could not find an AprilTag, or it just fails
     public CompletableFuture<Boolean> rotateTowardsAprilTag()
     {
         return CompletableFuture.supplyAsync(() -> {
-            LLResult result = retrieveResult();
-            // how to detect if robot did not see the apriltag?
+
+            
 
             return true;
         });
